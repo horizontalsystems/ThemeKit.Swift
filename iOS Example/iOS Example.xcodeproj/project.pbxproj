@@ -10,6 +10,7 @@
 		3A39D0962755E5FC0022CB8B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A39D0942755E5FC0022CB8B /* ViewController.swift */; };
 		3A39D0972755E5FC0022CB8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A39D0952755E5FC0022CB8B /* AppDelegate.swift */; };
 		3A39D0992755EC780022CB8B /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A39D0982755EC780022CB8B /* ColorCell.swift */; };
+		D3500A3628EEE8960093A369 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D3500A3528EEE8960093A369 /* SnapKit */; };
 		D94502FD261F98A500F6BF2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D94502FC261F98A500F6BF2E /* Assets.xcassets */; };
 		D945030C261F99CC00F6BF2E /* ThemeKit in Frameworks */ = {isa = PBXBuildFile; productRef = D945030B261F99CC00F6BF2E /* ThemeKit */; };
 /* End PBXBuildFile section */
@@ -18,7 +19,7 @@
 		3A39D0942755E5FC0022CB8B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3A39D0952755E5FC0022CB8B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A39D0982755EC780022CB8B /* ColorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
-		D94502F5261F98A400F6BF2E /* iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D94502F5261F98A400F6BF2E /* ThemeKit Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ThemeKit Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D94502FC261F98A500F6BF2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9450301261F98A500F6BF2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -29,6 +30,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D945030C261F99CC00F6BF2E /* ThemeKit in Frameworks */,
+				D3500A3628EEE8960093A369 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,7 +49,7 @@
 		D94502F6261F98A400F6BF2E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D94502F5261F98A400F6BF2E /* iOS Example.app */,
+				D94502F5261F98A400F6BF2E /* ThemeKit Demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,9 +91,10 @@
 			name = "iOS Example";
 			packageProductDependencies = (
 				D945030B261F99CC00F6BF2E /* ThemeKit */,
+				D3500A3528EEE8960093A369 /* SnapKit */,
 			);
 			productName = "iOS Example";
-			productReference = D94502F5261F98A400F6BF2E /* iOS Example.app */;
+			productReference = D94502F5261F98A400F6BF2E /* ThemeKit Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -118,6 +121,9 @@
 				Base,
 			);
 			mainGroup = D94502EC261F98A400F6BF2E;
+			packageReferences = (
+				D3500A3428EEE8960093A369 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = D94502F6261F98A400F6BF2E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -275,19 +281,22 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Sources/Preview Content\"";
+				DEVELOPMENT_TEAM = HC4MCAXJ66;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Sources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "io.horizontalsystems.iOS-Example";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.horizontalsystems.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "ThemeKit Demo";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -298,18 +307,21 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Sources/Preview Content\"";
+				DEVELOPMENT_TEAM = HC4MCAXJ66;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Sources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "io.horizontalsystems.iOS-Example";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.horizontalsystems.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "ThemeKit Demo";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -336,7 +348,23 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		D3500A3428EEE8960093A369 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		D3500A3528EEE8960093A369 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D3500A3428EEE8960093A369 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
 		D945030B261F99CC00F6BF2E /* ThemeKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ThemeKit;

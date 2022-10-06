@@ -12,6 +12,7 @@ extension CGFloat {
     public static let cornerRadius8: CGFloat = 8
     public static let cornerRadius12: CGFloat = 12
     public static let cornerRadius16: CGFloat = 16
+    public static let cornerRadius24: CGFloat = 24
 
     public static let margin05x: CGFloat = 2
     public static let margin1x: CGFloat = 4
@@ -44,6 +45,8 @@ extension CGFloat {
     public static let heightButton: CGFloat = 50
     public static let heightBottomWrapperBar: CGFloat = 98
 
+    public static let iconSize16: CGFloat = 16
     public static let iconSize20: CGFloat = 20
     public static let iconSize24: CGFloat = 24
+    public static let iconSize48: CGFloat = 48
 }
