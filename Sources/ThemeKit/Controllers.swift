@@ -1,6 +1,12 @@
 import UIKit
+import UIExtensions
+
+extension ThemeNavigationController: IDeinitDelegate {}
+extension ThemeTabBarController: IDeinitDelegate {}
+extension ThemeViewController: IDeinitDelegate {}
 
 open class ThemeNavigationController: UINavigationController {
+    public var onDeinit: (() -> ())?
 
     override public init(rootViewController: UIViewController) {
         super.init(rootViewController: rootViewController)
@@ -20,6 +26,10 @@ open class ThemeNavigationController: UINavigationController {
     private func commonInit() {
         navigationBar.prefersLargeTitles = true
         navigationBar.tintColor = .themeJacob
+    }
+
+    deinit {
+        onDeinit?()
     }
 
     override open var childForStatusBarStyle: UIViewController? {
@@ -50,9 +60,14 @@ open class ThemeNavigationController: UINavigationController {
 }
 
 open class ThemeTabBarController: UITabBarController {
+    public var onDeinit: (() -> ())?
 
     public init() {
         super.init(nibName: nil, bundle: nil)
+    }
+
+    deinit {
+        onDeinit?()
     }
 
     required public init?(coder aDecoder: NSCoder) {
@@ -98,9 +113,14 @@ open class ThemeTabBarController: UITabBarController {
 }
 
 open class ThemeViewController: UIViewController {
+    public var onDeinit: (() -> ())?
 
     public init() {
         super.init(nibName: nil, bundle: nil)
+    }
+
+    deinit {
+        onDeinit?()
     }
 
     required public init?(coder aDecoder: NSCoder) {
