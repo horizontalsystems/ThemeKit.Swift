@@ -1,19 +1,19 @@
+import Combine
 import UIKit
-import RxSwift
 
 open class ThemeWindow: UIWindow {
-    private let disposeBag = DisposeBag()
+    private var cancellables = Set<AnyCancellable>()
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
 
         update(themeMode: ThemeManager.shared.themeMode)
 
-        ThemeManager.shared.changeThemeSignal
-                .emit(onNext: { [weak self] themeMode in
+        ThemeManager.shared.$themeMode
+                .sink { [weak self] themeMode in
                     self?.update(themeMode: themeMode)
-                })
-                .disposed(by: disposeBag)
+                }
+                .store(in: &cancellables)
     }
 
     required public init?(coder aDecoder: NSCoder) {
