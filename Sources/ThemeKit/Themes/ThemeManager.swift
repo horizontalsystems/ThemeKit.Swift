@@ -1,21 +1,18 @@
+import Combine
 import UIKit
-import RxCocoa
+import HsExtensions
 
 public class ThemeManager {
     private static let defaultLightMode: ThemeMode = .system
     private static let userDefaultsKey = "theme_mode"
 
-    private let changeThemeRelay = PublishRelay<ThemeMode>()
-
     public static var shared = ThemeManager()
 
-    public var themeMode: ThemeMode {
+    @PostPublished public var themeMode: ThemeMode {
         didSet {
             UserDefaults.standard.set(themeMode.rawValue, forKey: ThemeManager.userDefaultsKey)
             currentTheme = ThemeManager.theme(mode: themeMode)
             Theme.updateNavigationBarTheme()
-
-            changeThemeRelay.accept(themeMode)
         }
     }
 
@@ -32,8 +29,10 @@ public class ThemeManager {
             storedThemeMode = ThemeMode(rawValue: newLightMode)
         }
 
-        themeMode = storedThemeMode ?? ThemeManager.defaultLightMode
+        let themeMode = storedThemeMode ?? ThemeManager.defaultLightMode
         currentTheme = ThemeManager.theme(mode: themeMode)
+
+        self.themeMode = themeMode
     }
 
     private static func theme(mode: ThemeMode) -> ITheme {
@@ -42,10 +41,6 @@ public class ThemeManager {
         case .dark: return DarkTheme()
         case .system: return SystemTheme()
         }
-    }
-
-    public var changeThemeSignal: Signal<ThemeMode> {
-        changeThemeRelay.asSignal()
     }
 
 }
