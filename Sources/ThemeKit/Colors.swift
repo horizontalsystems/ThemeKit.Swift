@@ -1,5 +1,49 @@
+import SwiftUI
 import UIKit
 import UIExtensions
+
+extension Color {
+    public static let themeGray = Color("Gray", bundle: Bundle.module)
+    public static let themeLightGray = Color("LightGray", bundle: Bundle.module)
+    public static let themeDark = Color("Dark", bundle: Bundle.module)
+    public static let themeDarker = Color("Darker", bundle: Bundle.module)
+    public static let themeSteel = Color("Steel", bundle: Bundle.module)
+    public static let themeSteelLight = Color("SteelLight", bundle: Bundle.module)
+    public static let themeYellow = Color("Yellow", bundle: Bundle.module)
+    public static let themeGreen = Color("Green", bundle: Bundle.module)
+    public static let themeRed = Color("Red", bundle: Bundle.module)
+    public static let themeStronbuy = Color("Stronbuy", bundle: Bundle.module)
+
+    public static let themeGray50 = Color.themeGray.opacity(0.5)
+    public static let themeSteel10 = Color.themeSteel.opacity(0.1)
+    public static let themeSteel20 = Color.themeSteel.opacity(0.2)
+    public static let themeSteel30 = Color.themeSteel.opacity(0.3)
+    public static let themeYellow20 = Color.themeYellow.opacity(0.2)
+    public static let themeYellow50 = Color.themeYellow.opacity(0.5)
+    public static let themeRed50 = Color.themeRed.opacity(0.5)
+
+    public static let themeJacob = Color("Jacob", bundle: Bundle.module)
+    public static let themeRemus = Color("Remus", bundle: Bundle.module)
+    public static let themeLucian = Color("Lucian", bundle: Bundle.module)
+    public static let themeLeah = Color("Leah", bundle: Bundle.module)
+    public static let themeAndy = Color("Andy", bundle: Bundle.module)
+    public static let themeBlackTenTwenty = Color("BlackTenTwenty", bundle: Bundle.module)
+    public static let themeBran = Color("Bran", bundle: Bundle.module)
+    public static let themeClaude = Color("Claude", bundle: Bundle.module)
+    public static let themeHelsing = Color("Helsing", bundle: Bundle.module)
+    public static let themeJeremy = Color("Jeremy", bundle: Bundle.module)
+    public static let themeLaguna = Color("Laguna", bundle: Bundle.module)
+    public static let themeLawrence = Color("Lawrence", bundle: Bundle.module)
+    public static let themeLawrencePressed = Color("LawrencePressed", bundle: Bundle.module)
+    public static let themeNina = Color("Nina", bundle: Bundle.module)
+    public static let themeRaina = Color("Raina", bundle: Bundle.module)
+    public static let themeTyler = Color("Tyler", bundle: Bundle.module)
+    public static let themeTyler96 = Color("Tyler96", bundle: Bundle.module)
+
+    public static var themeBackgroundFromGradient: Color { .themeTyler }
+    public static var themeBackgroundToGradient: Color { .themeHelsing }
+    public static var themeNavigationBarBackground: Color { .themeTyler96 }
+}
 
 extension UIColor {
     public static let themeYellowD = UIColor(hex: 0xffa800)

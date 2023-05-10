@@ -10,7 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.backgroundColor = .white
-        window?.rootViewController = ThemeNavigationController(rootViewController: ViewController())
+        window?.rootViewController = MainController()
 
         return true
     }
