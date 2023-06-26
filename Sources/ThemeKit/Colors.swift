@@ -109,7 +109,11 @@ extension UIColor {
 
     private static func color(dark: UIColor, light: UIColor) -> UIColor {
         UIColor { traits in
-            traits.userInterfaceStyle == .dark ? dark : light
+            switch ThemeManager.shared.themeMode {
+            case .dark: return dark
+            case .light: return light
+            case .system: return traits.userInterfaceStyle == .dark ? dark : light
+            }
         }
     }
 
