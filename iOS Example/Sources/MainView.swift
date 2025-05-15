@@ -22,7 +22,7 @@ struct MainView: View {
                         Text("Fonts")
                     }
         }
-                .accentColor(.themeJacob)
+                .accentColor(.themeOrange)
     }
 
 }

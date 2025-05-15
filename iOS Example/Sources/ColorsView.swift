@@ -21,7 +21,7 @@ struct ColorsView: View {
         CustomColor(name: "Steel20", color: .themeSteel20),
         CustomColor(name: "Steel30", color: .themeSteel30),
         CustomColor(name: "Yellow20", color: .themeYellow20),
-        CustomColor(name: "Yellow50", color: .themeYellow50),
+        CustomColor(name: "Orange50", color: .themeOrange.pressed),
         CustomColor(name: "Red50", color: .themeRed50),
         CustomColor(name: "Jacob", color: .themeJacob),
         CustomColor(name: "Remus", color: .themeRemus),
